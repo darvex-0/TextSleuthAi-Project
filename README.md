@@ -69,7 +69,7 @@ Before running the project, ensure you have:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/TextSleuthAi.git
+git clone https://github.com/darvex-0/TextSleuthAi-Project.git
 cd TextSleuthAi
 
 # Install dependencies
