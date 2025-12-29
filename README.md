@@ -420,15 +420,13 @@ When reporting bugs, please include:
 
 ## 📄 License
 
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
-
 You are free to use, modify, and distribute this software for any purpose.
 
 ## 💬 Support
 
 Need help? Here are your options:
 
-- 📧 **Email** - [support@textsleuthAi.com](mailto:support@textsleuthAi.com)
+- 📧 **Email** - [support@textsleuthAi.com](mailto:rakeshpallamgod@gmail.com)
 - 🐛 **Bug Reports** - [Open an issue](https://github.com/darvex-0/TextSleuthAi-Project/issues)
 - 💡 **Feature Requests** - [Request a feature](https://github.com/darvex-0/TextSleuthAi-Project/issues)
 - 💬 **Discussions** - [GitHub Discussions](https://github.com/darvex-0/TextSleuthAi-Project/discussions)
