@@ -426,7 +426,7 @@ You are free to use, modify, and distribute this software for any purpose.
 
 Need help? Here are your options:
 
-- 📧 **Email** - [support@textsleuthAi.com](mailto:rakeshpallamgod@gmail.com)
+- 📧 **Email** - [rakeshpallamgod@gmail.com](mailto:rakeshpallamgod@gmail.com)
 - 🐛 **Bug Reports** - [Open an issue](https://github.com/darvex-0/TextSleuthAi-Project/issues)
 - 💡 **Feature Requests** - [Request a feature](https://github.com/darvex-0/TextSleuthAi-Project/issues)
 - 💬 **Discussions** - [GitHub Discussions](https://github.com/darvex-0/TextSleuthAi-Project/discussions)
