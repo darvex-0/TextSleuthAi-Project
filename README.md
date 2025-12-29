@@ -11,7 +11,7 @@
 
 Your intelligent partner for analyzing text. **TextSleuth AI** is a cutting-edge web application that detects AI-generated content and checks for plagiarism using advanced AI-powered tools.
 
-[Live Demo](#) • [Report Bug](https://github.com/yourusername/TextSleuthAi/issues) • [Request Feature](https://github.com/yourusername/TextSleuthAi/issues)
+[Live Demo](#) • [Report Bug](https://github.com/darvex-0/TextSleuthAi-Project/issues) • [Request Feature](https://github.com/darvex-0/TextSleuthAi-Project/issues)
 
 </div>
 
@@ -62,15 +62,14 @@ Before running the project, ensure you have:
 
 - **Node.js** 18 or higher ([Download](https://nodejs.org/))
 - **npm** or **yarn** package manager
-- **Google Genkit** API credentials ([Get Started](https://genkit.dev/docs/getstarted))
-- **Firebase** configuration ([Setup Guide](https://firebase.google.com/docs/web/setup))
+- **Google Gemini API** key ([Get Free API Key](https://aistudio.google.com/apikey))
 
 ## 🚀 Quick Start
 
 ```bash
 # Clone the repository
 git clone https://github.com/darvex-0/TextSleuthAi-Project.git
-cd TextSleuthAi
+cd TextSleuthAi-Project
 
 # Install dependencies
 npm install
@@ -81,9 +80,6 @@ cp .env.example .env.local
 
 # Start development server
 npm run dev
-
-# In another terminal, start Genkit
-npm run genkit:dev
 ```
 
 Navigate to `http://localhost:9002` and start analyzing text!
@@ -93,8 +89,8 @@ Navigate to `http://localhost:9002` and start analyzing text!
 ### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/TextSleuthAi.git
-cd TextSleuthAi
+git clone https://github.com/darvex-0/TextSleuthAi-Project.git
+cd TextSleuthAi-Project
 ```
 
 ### Step 2: Install Dependencies
@@ -107,49 +103,30 @@ yarn install
 
 ### Step 3: Set Up Environment Variables
 
-Create a `.env.local` file in the root directory with your configuration:
+Create a `.env.local` file in the root directory:
 
 ```env
-# Google Genkit
-NEXT_PUBLIC_GENKIT_API_KEY=your_genkit_api_key
-
-# Firebase Configuration
-NEXT_PUBLIC_FIREBASE_API_KEY=your_firebase_api_key
-NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_firebase_auth_domain
-NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_firebase_project_id
-NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_firebase_storage_bucket
-NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_firebase_messaging_sender_id
-NEXT_PUBLIC_FIREBASE_APP_ID=your_firebase_app_id
+# Google Gemini API Key (Get free from https://aistudio.google.com/apikey)
+GENKIT_API_KEY=your_gemini_api_key_here
 ```
 
-### Step 4: Configure Google Genkit
+### Step 4: Configure Gemini API
 
-Follow the [Google Genkit setup guide](https://genkit.dev/docs/getstarted) to:
-1. Create a Google Cloud project
-2. Enable the Generative AI API
-3. Create API credentials
-4. Add credentials to your `.env.local`
+1. Visit [Google AI Studio](https://aistudio.google.com/apikey)
+2. Click "Create API Key" (Free tier available)
+3. Copy your API key
+4. Paste it in `.env.local` as shown above
 
 ## 🏃 Running the Project
 
 ### Development Mode
 
 ```bash
-# Terminal 1: Start Next.js development server (port 9002 with Turbopack)
+# Start Next.js development server (port 9002 with Turbopack)
 npm run dev
-
-# Terminal 2: Start Genkit development server
-npm run genkit:dev
 ```
 
 Visit `http://localhost:9002` to access the application.
-
-### Watch Mode for Active Development
-
-```bash
-# Auto-reload on file changes
-npm run genkit:watch
-```
 
 ### Type Checking
 
@@ -214,8 +191,6 @@ src/
 | Command | Description | Port |
 |---------|-------------|------|
 | `npm run dev` | Start Next.js dev server with Turbopack | 9002 |
-| `npm run genkit:dev` | Start Genkit development server | 4000 |
-| `npm run genkit:watch` | Start Genkit with auto-reload | 4000 |
 | `npm run build` | Create optimized production build | — |
 | `npm start` | Start production server | 3000 |
 | `npm run lint` | Run ESLint checks | — |
@@ -287,21 +262,18 @@ curl -X POST http://localhost:9002/api/plagiarism-checker \
 
 | Variable | Description | Required |
 |----------|-------------|----------|
-| `NEXT_PUBLIC_GENKIT_API_KEY` | Google Genkit API key | ✅ |
-| `NEXT_PUBLIC_FIREBASE_API_KEY` | Firebase API key | ✅ |
-| `NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN` | Firebase auth domain | ✅ |
-| `NEXT_PUBLIC_FIREBASE_PROJECT_ID` | Firebase project ID | ✅ |
-| `NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET` | Firebase storage bucket | ❌ |
-| `NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID` | Firebase messaging sender ID | ❌ |
-| `NEXT_PUBLIC_FIREBASE_APP_ID` | Firebase app ID | ✅ |
+| `GENKIT_API_KEY` | Google Gemini API key | ✅ |
+
+Get your free API key at: https://aistudio.google.com/apikey
 
 ### Next.js Configuration
 
 The project uses:
 - **next.config.ts** - Custom Next.js configuration
-- **tsconfig.json** - TypeScript configuration
+- **tsconfig.json** - TypeScript configuration with strict mode
 - **tailwind.config.ts** - Tailwind CSS customization
 - **postcss.config.js** - PostCSS plugins
+- **components.json** - shadcn/ui component configuration
 
 ## 🎨 UI Components
 
@@ -334,9 +306,8 @@ All components adapt seamlessly across screen sizes using Tailwind CSS responsiv
 - ✅ **Type-Safe** - Full TypeScript coverage for type safety
 - ✅ **Server Actions** - Secure server-side execution with Next.js
 - ✅ **Form Validation** - Input validation using Zod schemas
-- ✅ **Environment Variables** - Sensitive data protected via `.env.local`
-- ✅ **Firebase Security** - Firebase rules and authentication
-- ⚠️ **Note** - This is a public instance. Implement additional authentication for production use.
+- ✅ **Environment Variables** - API keys protected via `.env.local` (never committed to git)
+- ✅ **API Key Protection** - Keys never exposed to client-side code
 
 ## 🐛 Troubleshooting
 
@@ -350,12 +321,14 @@ npm run dev -- -p 3000
 ### Genkit Connection Issues
 
 ```bash
-# Ensure Genkit is running in a separate terminal
-npm run genkit:dev
-
-# Check if port 4000 is accessible
-netstat -an | findstr :4000
+# Ensure your GEMINI_API_KEY is set correctly in .env.local
+# The Genkit flows run automatically with npm run dev
 ```
+
+- Verify your API key is valid: https://aistudio.google.com/apikey
+- Check that Gemini API is enabled for your key
+- Verify `.env.local` file is in the root directory with the correct API key
+- Restart the development server after updating `.env.local`
 
 ### Environment Variables Not Loading
 
@@ -379,11 +352,18 @@ npm run typecheck
 npm install --save-dev @types/node@latest
 ```
 
-### Firebase Connection Errors
+### Gemini API Connection Errors
 
-- Verify your Firebase project credentials in `.env.local`
-- Check Firebase console for API key restrictions
-- Ensure Firebase services are enabled in your project
+```bash
+# Verify API key is set correctly
+echo $env:GENKIT_API_KEY  # PowerShell on Windows
+echo $GENKIT_API_KEY      # Bash on Mac/Linux
+```
+
+- Ensure your API key is valid: https://aistudio.google.com/apikey
+- Check that Gemini API is enabled for your key
+- Verify `.env.local` file is in the root directory
+- Restart the development server after updating `.env.local`
 
 For more help, check the [troubleshooting guide](./docs/TROUBLESHOOTING.md) or open an issue.
 
@@ -395,7 +375,7 @@ We welcome contributions to TextSleuth AI! Here's how to get started:
 
 1. **Fork the repository**
    ```bash
-   git clone https://github.com/yourusername/TextSleuthAi.git
+   git clone https://github.com/darvex-0/TextSleuthAi-Project.git
    ```
 
 2. **Create a feature branch**
@@ -449,10 +429,10 @@ You are free to use, modify, and distribute this software for any purpose.
 Need help? Here are your options:
 
 - 📧 **Email** - [support@textsleuthAi.com](mailto:support@textsleuthAi.com)
-- 🐛 **Bug Reports** - [Open an issue](https://github.com/yourusername/TextSleuthAi/issues)
-- 💡 **Feature Requests** - [Request a feature](https://github.com/yourusername/TextSleuthAi/issues)
-- 💬 **Discussions** - [GitHub Discussions](https://github.com/yourusername/TextSleuthAi/discussions)
-- 📖 **Documentation** - [Wiki](https://github.com/yourusername/TextSleuthAi/wiki)
+- 🐛 **Bug Reports** - [Open an issue](https://github.com/darvex-0/TextSleuthAi-Project/issues)
+- 💡 **Feature Requests** - [Request a feature](https://github.com/darvex-0/TextSleuthAi-Project/issues)
+- 💬 **Discussions** - [GitHub Discussions](https://github.com/darvex-0/TextSleuthAi-Project/discussions)
+- 📖 **Documentation** - [Wiki](https://github.com/darvex-0/TextSleuthAi-Project/wiki)
 
 ## 🎉 Acknowledgments
 
@@ -460,11 +440,11 @@ This project was built with amazing open-source technologies:
 
 - [**Next.js**](https://nextjs.org/) - React framework for production
 - [**Google Genkit**](https://genkit.dev/) - Generative AI framework
+- [**Google Gemini API**](https://ai.google.dev/) - Advanced AI models (Free tier available)
 - [**shadcn/ui**](https://ui.shadcn.com/) - High-quality UI components
 - [**Tailwind CSS**](https://tailwindcss.com/) - Utility-first CSS framework
 - [**TypeScript**](https://www.typescriptlang.org/) - JavaScript with syntax for types
 - [**Lucide Icons**](https://lucide.dev/) - Beautiful icon library
-- [**Firebase**](https://firebase.google.com/) - Backend as a service
 - [**React Hook Form**](https://react-hook-form.com/) - Performant forms
 - [**Zod**](https://zod.dev/) - TypeScript-first schema validation
 
