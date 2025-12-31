@@ -420,7 +420,7 @@ When reporting bugs, please include:
 
 ## 📄 License
 
-You are free to use, modify, and distribute this software for any purpose.
+You are free to use, modify, and distribute this software for any purpose. see the [LICENSE](LICENSE) file for details.
 
 ## 💬 Support
 
